@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASeMAP - Creator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* CSS untuk bagian Informasi Pembuat */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+        }
+
+        .creator-info {
+            background-color: #ff9a9a;
+            padding: 40px;
+            text-align: center;
+            border-top: 2px solid #ffffff;
+        }
+
+        .creator-details {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .creator-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 0%;
+            object-fit: cover;
+        }
+
+        .creator-text {
+            max-width: 600px;
+        }
+        
+        .creator-text h2 {
+            color: #902b2b;
+            font-size: 2rem;
+            font-style: bold;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .creator-text h3 {
+            color: #000000;
+            font-size: 1.5rem;
+        }
+        .creator-text h4 {
+            color: #900a0a;
+            font-size: 1rem;
+        }
+
+        .creator-text p {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .creator-text a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .creator-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Bagian Informasi Pembuat -->
+    <div class="creator-info">
+        <h2>Profile</h2>
+        <div class="creator-details">
+            <img src="data/me.jpg" alt="Foto Pembuat" class="creator-photo">
+            <div class="creator-text">
+                <h3>Kaesti Novita Ramadhanti</h3>
+                <h4>Semester 3 | 23/522289/SV/23651</h4>
+                <p>BASeMAP adalah sebuah proyek yang saya buat untuk memenuhi responsi praktikum Pemrograman Geospasial
+                    Website. Website ini menampilkan informasi persebaran titik lokasi bank sampah di Kota Yogyakarta.
+                </p>
+                <div class="social-icons">
+                    <!-- GitHub Icon -->
+                    <a href="https://github.com/kaestinovita" target="_blank" title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <!-- Instagram Icon -->
+                    <a href="https://www.instagram.com/kaestinovita/" target="_blank" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-envelope"></i> Contact me at: <a
+                            href="mailto:novitaramadhanti12@gmail.com">novitaramadhanti12@gmail.com</a></p>
+                    <p><i class="fa-solid fa-phone"></i> Phone: +62 895-3200-71433</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

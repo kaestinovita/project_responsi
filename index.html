@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BASeMAP</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #ffffff;
+      font-family: sans-serif;
+      font-style: bold;
+      color: #000000;
+      padding: 16px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgb(221, 221, 221);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 0;
+      /* Memberi jarak antara logo dan teks */
+    }
+
+    .text {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 0;
+      color: #336021;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #3451a3;
+    }
+
+    /* Landing Page Styles */
+
+    /* Styling untuk Landing Page */
+    .landing-page {
+      padding: 50px 20px;
+      background-color: #ffffff;
+    }
+
+    /* Kontainer utama dengan grid */
+    .landing-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Gambar */
+    .image-container {
+      display: flex;
+      justify-content: center;
+      /* Membuat gambar berada di tengah */
+    }
+
+    .landing-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Teks (Judul, Keterangan, Button) */
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #d5f2ff;
+      border-radius: 8px;
+      /* Vertikal center */
+    }
+
+    .text-container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      padding-left: 16px;
+    }
+
+    .text-container p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      padding-left: 16px;
+    }
+
+    .landing-page .btn {
+      display: inline-block; 
+      background-color: #ffffff;
+      color: #3451a3;
+      text-decoration: none;
+      padding: 8px 16px;
+      margin-bottom: 16px;
+      margin-left: 16px;
+      font-size: 14px;
+      border-radius: 30px;
+      font-weight: bold;
+      width: 120px;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .landing-page .btn:hover {
+      background-color: #4FC3F7;
+      color: #ffffff;
+    }
+
+    /* About Section Styles */
+    .about-section {
+      background-color: #F4F2EF;
+      margin-top: 0px;
+      margin-bottom: 16px;
+      padding: 80px 0px;
+      margin-left: 16px;
+      margin-right: 16px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 36px;
+      color: #e0e25c;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      color: #000000;
+      margin-bottom: 40px;
+      text-align: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 20px;
+    }
+
+    /* Education Section Styles */
+    .education-section {
+      background-color: #C2CB96;
+      padding-top: 16px;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding: 80px 0px;
+      border-radius: 20px;
+    }
+
+    .education-section h2 {
+      font-size: 36px;
+      color: #000000;
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin-bottom: 20px;
+
+    }
+
+    .tips-section {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .tip-card {
+      background: #f8f8f8;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .tip-card:hover {
+      transform: scale(1.05);
+    }
+
+    .tip-card img {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+
+    .tip-card h3 {
+      color: #3F4D34;
+      font-size: 1.2em;
+    }
+
+    .tip-card p {
+      color: #555;
+      font-size: 0.9em;
+      margin: 10px 0;
+    }
+
+    .tip-card button {
+      background: #000000;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .tip-card button:hover {
+      background: #898d89;
+    }
+
+
+    /* Footer Styles */
+    footer {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 20px;
+      margin-top: 16px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgb(81, 74, 74);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-content p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <img src="data/logo.png" alt="BASeMAP">
+        <span class="text">BASeMAP</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#landing-page">Home</a></li>
+          <li><a href="#about-section">About</a></li>
+          <li><a href="#education-section">Education</a></li>
+          <li><a href="https://forms.gle/JcYERdGw7fmitTY69">Form</a></li>
+          <li><a href="creator.html">Creator</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="landing-page" id="landing-page">
+      <div class="landing-container">
+        <!-- Bagian Gambar -->
+        <div class="image-container">
+          <img src="data/lp1" alt="Landing Image" class="landing-image">
+        </div>
+
+        <!-- Bagian Teks (Judul, Keterangan, dan Button) -->
+        <div class="text-container">
+          <h1>Welcome to BASeMAP</h1>
+          <p>Interactive platform to manage waste bank distribution in Yogyakarta City.</p>
+          <a href="map.html" class="btn">View Map</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about-section">
+      <h2>About BASeMAP</h2>
+      <p> BASeMAP adalah website yang mengedepankan keberlanjutan dan kesadaran lingkungan,
+        dengan menyediakan informasi terkini mengenai lokasi dan distribusi bank sampah di Kota Yogyakarta.
+        Peta interaktif yang dimiliki platform ini memungkinkan pengguna untuk menemukan bank sampah terdekat secara
+        cepat.
+        Adanya website ini dapat meningkatkan partisipasi masyarakat dalam pengelolaan sampah yang lebih baik,
+        serta mendukung program daur ulang yang ramah lingkungan. Setiap individu dapat berperan dalam menjaga
+        kelestarian bumi. Ayo bergabung dalam gerakan untuk menciptakan lingkungan yang lebih bersih dan hijau
+        dengan menggunakan BASeMAP!</p>
+    </section>
+
+    <section class="education-section" id="education-section">
+      <h2>Education</h2>
+      <div class="tips-section">
+        <div class="tip-card">
+          <img src="data/fertilize.png" alt="Ikon Kompos">
+          <h3>Buat Kompos dari Sampah Organik</h3>
+          <p>Gunakan sisa makanan dan dedaunan untuk membuat pupuk organik alami bagi tanaman di rumah.</p>
+          <button class="card-button"
+            onclick="window.location.href='https://youtu.be/uQKPQUusztU?si=UyV4Tda-IOTC8ebg';">
+            Pelajari Lebih Lanjut
+          </button>
+        </div>
+        <div class="tip-card">
+          <img src="data/no_plastic.png" alt="Ikon Reusable">
+          <h3>Gunakan Kantong Belanja Reusable</h3>
+          <p>Ganti kantong plastik dengan kantong kain untuk mengurangi limbah plastik di lingkungan.</p>
+          <button class="card-button"
+            onclick="window.location.href='https://youtu.be/1j8xJ0cZGWI?si=lHRrFPCdTLJASPCN';">
+            Pelajari Lebih Lanjut
+          </button>
+        </div>
+        <div class="tip-card">
+          <img src="data/waste_bin.png" alt="Ikon Recycle">
+          <h3>Ayo mulai memilah sampah</h3>
+          <p>Lakukan pemilahan sampah untuk memudahkan pengelolaan dan mengurangi dampak negatif pada lingkungan.</p>
+          <button class="card-button"
+            onclick="window.location.href='https://youtu.be/nrANKUUHBf0?si=6P-p0JRajRXiRPC0';">
+            Pelajari Lebih Lanjut
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-center">
+      <p>&copy; 2024 BASeMAP. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
